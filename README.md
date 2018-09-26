@@ -70,3 +70,30 @@ projec-name
 
 由于`Egg.js`是底层框架是`Koa`，所以Egg继承了`Koa`的4个对象（`Application,Context,Request,Response`)以及框架扩展的一些对象（`Controller,Service,Helper,Config,Logger`）。
 
+#### Application
+
+`Application`是全局应用对象，它继承自`Koa.Application`，在它上面我们可以挂载一些全局的方法和对象。
+
+#### Context
+
+`Context`是一个**请求级别的对象**，继承自`Koa.Context`。在每次收到用户请求时，框架会实例化一个`Context`对象，对象里封装了这次用户请求的信息，并提供了许多便捷的方法来获取请求参数或者设置响应信息。
+
+#### Request 和 Response
+
+`Request`是一个**请求级别的对象**，继承自`Koa.Request`。封装了`Node.js`原生的`HTTP Request`对象，提供一系类辅助方法获取`HTTP`请求常用参数。
+
+`Response`是一个**请求级别的对象**，继承自 [Koa.Response](http://koajs.com/#response)。封装了 `Node.js` 原生的 `HTTP Response` 对象，提供了一系列辅助方法设置 `HTTP` 响应。
+
+#### Controller
+
+框架提供一个`Controller`基类，并推荐所有的`Controller`都继承于改基类实现。这个`Controller`基类有下列属性：
+
+- `ctx` - 当前请求的`Context`实例
+- `app` - 应用的`Application`实例
+- `config` - 应用的配置
+- `service` - 应用所有的`service`
+- `logger` - 为当前`controller`封装的`logger`对象
+
+#### Service
+
+框架提供了一个`Service`基类，并推荐所有的`Service`都继承于该基类实现
