@@ -8,7 +8,7 @@
 
 Egg继承于Koa，Koa已经是一个非常优秀的框架了，但对于一个企业级应用来说，它还不够完善，而Egg选择了Koa作为基础框架，在它的模型基础上，进一步对它进行增强。可以理解为Egg就是Koa的升级版本，更加的完善。
 
-![](C:\Users\Administrator\Desktop\egg.png)
+![](http://qiniu.xl686.com/egg.png)
 
 ### 快速入门
 
