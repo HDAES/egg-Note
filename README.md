@@ -82,7 +82,7 @@ projec-name
 
 `Request`是一个**请求级别的对象**，继承自`Koa.Request`。封装了`Node.js`原生的`HTTP Request`对象，提供一系类辅助方法获取`HTTP`请求常用参数。
 
-`Response`是一个**请求级别的对象**，继承自 [Koa.Response](http://koajs.com/#response)。封装了 `Node.js` 原生的 `HTTP Response` 对象，提供了一系列辅助方法设置 `HTTP` 响应。
+`Response`是一个**请求级别的对象**，继承自`Koa.Response`。封装了 `Node.js` 原生的 `HTTP Response` 对象，提供了一系列辅助方法设置 `HTTP` 响应。
 
 #### Controller
 
@@ -97,3 +97,10 @@ projec-name
 #### Service
 
 框架提供了一个`Service`基类，并推荐所有的`Service`都继承于该基类实现
+
+### Middleware中间件
+
+`Egg`是基于`Koa`实现的，所以`Egg`的中间件形式与`Koa`的中间件一样，都是基于洋葱圈模型。
+
+![](http://qiniu.xl686.com/mid.png)
+
