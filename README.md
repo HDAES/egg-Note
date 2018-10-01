@@ -102,5 +102,33 @@ projec-name
 
 `Egg`是基于`Koa`实现的，所以`Egg`的中间件形式与`Koa`的中间件一样，都是基于洋葱圈模型。
 
-![](http://qiniu.xl686.com/mid.png)
+![](http://qiniu.xl686.com//mid.png)
 
+### Router
+
+`Router`主要用来描述请求 URL 和具体承担执行动作的 Controller 的对应关系， 框架约定了 `app/router.js` 文件用于统一所有路由规则。
+
+#### 如何定义Router
+
+- `app/router.js` 里面定义 URL 路由规则
+
+```javascript
+// app/router.js
+module.exports = app => {
+  const { router, controller } = app;
+  router.get('/', controller.home.index);
+};
+```
+
+- `app/controller` 目录下面实现 Controller
+
+```javascript
+// app/controller/user.js
+class HomeController extends Controller {
+  async index() {
+    this.ctx.body = 'hi, egg';
+  }
+}
+```
+
+这样就完成了一个最简单的 Router 定义，当用户执行 `GET /，`user.js` 这个里面的`index`方法就会执行。
